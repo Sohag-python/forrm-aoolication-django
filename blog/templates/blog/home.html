@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog Home</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Blog Home</h1>
+        {% for post in posts %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <p class="card-text">{{ post.content }}</p>
+                    <p class="text-muted">By {{ post.author }} on {{ post.date_posted }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
